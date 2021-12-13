@@ -33,8 +33,11 @@
 
                 let angka1 = parseInt(player1);
                 let angka2 = parseInt(player2);
-                let rand = Math.floor(Math.random() * 3 + 1)
-                if (player1 != angka1 || player2 != angka2) {
+                let rand = Math.floor(Math.random() * 3 + 1);
+                if(player1 == "" || player2 == ""){
+                    alert("Inputan tidak boleh kosong");
+                    ulangi = confirm("ulangi ?");
+                }else if (player1 != angka1 || player2 != angka2) {
                     alert("Inputan hanya boleh angka");
                     ulangi = confirm("ulangi ?");
                 
@@ -44,28 +47,32 @@
                 }else if(player1 == player2){
                     alert("Inputan tidak boleh sama dengan player 1");
                     ulangi = confirm("ulangi ?");
+                    
                 }else{
                     
                     if (player1 != rand && player2 != rand) {
                         alert("Tidak ada yang banar Skor "+score1+" : "+score2);
                         alert("Hasil yang di cari : "+rand
                                 +"\n"+"============="+"\n"+
-                                "Score Player 1 : "+score1+"\n"+
-                                "Score Player 2 : "+score2);
+                                "           Score   "+"\n"+
+                                " Team 1  || Team 2 "+"\n"+
+                                "    "+score1+"               "+score2);
                     }else if( player1 == rand ){
                         score1++
                         alert("Player satu win ");
                         alert("Hasil yang di cari : "+rand
                                 +"\n"+"============="+"\n"+
-                                "Score Player 1 : "+score1+"\n"+
-                                "Score Player 2 : "+score2);
+                                "           Score   "+"\n"+
+                                " Team 1  || Team 2 "+"\n"+
+                                "    "+score1+"               "+score2);
                     }else if(player2 == rand){
                         score2++;
                         alert("player dua win");
                         alert("Hasil yang di cari : "+rand
                                 +"\n"+"============="+"\n"+
-                                "- Score Player 1 : "+score1+"\n"+
-                                "- Score Player 2 : "+score2);
+                                "           Score   "+"\n"+
+                                " Team 1  || Team 2 "+"\n"+
+                                "    "+score1+"               "+score2);
                     
                     }
                     break;
