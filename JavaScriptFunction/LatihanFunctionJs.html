@@ -25,25 +25,29 @@
         for (let rounde = 1; rounde <= 5; rounde++) {
 
             confirm("Rounde "+rounde);
-                
+            let ulangi = true;
+                while (ulangi) {
+            
                 let player1 = prompt("Player 1 Masukan angka ");
                 let player2 = prompt("player 2 Masukan angka ");
 
                 let angka1 = parseInt(player1);
                 let angka2 = parseInt(player2);
                 let rand = Math.floor(Math.random() * 3 + 1)
-                
                 if (player1 != angka1 || player2 != angka2) {
                     alert("Inputan hanya boleh angka");
-                    
+                    ulangi = confirm("ulangi ?");
+                
                 }else if(player1 <= 0 || player1 > 3 || player2 <= 0 || player2 > 3){
                     alert("Inputan hanya boleh dalam range 1- 3");
+                    ulangi = confirm("ulangi ?");
                 }else if(player1 == player2){
                     alert("Inputan tidak boleh sama dengan player 1");
+                    ulangi = confirm("ulangi ?");
                 }else{
                     
                     if (player1 != rand && player2 != rand) {
-                        alert("Tidak ada yang banar ");
+                        alert("Tidak ada yang banar Skor "+score1+" || "+score2);
                         alert("Hasil yang di cari : "+rand
                                 +"\n"+"============="+"\n"+
                                 "Score Player 1 : "+score1+"\n"+
@@ -62,8 +66,12 @@
                                 +"\n"+"============="+"\n"+
                                 "- Score Player 1 : "+score1+"\n"+
                                 "- Score Player 2 : "+score2);
+                    
                     }
+                    break;
                 }
+                
+            }
                 
         }
 
