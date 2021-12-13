@@ -51,23 +51,23 @@
                 }else{
                     
                     if (player1 != rand && player2 != rand && score1 == score2) {
-                        alert("Tidak ada yang banar Skor SERI "+score1+" : "+score2);
+                        alert("Tebakan salah Skor SERI "+score1+" : "+score2);
                         alert("Hasil yang di cari : "+rand
                                 +"\n"+"============="+"\n"+
                                 "Score   "+"\n"+"Round "+rounde+"\n"+
                                 "-----------------------"+"\n"+
                                 " Player 1  || Player 2 "+"\n"+
                                 "     "+score1+"                "+score2);
-                    }else if(player1 != rand && player2 && score1 < score2){
-                        alert("Tidak ada yang banar Skor "+score1+" : "+score2);
+                    }else if(player1 != rand && player2 != rand && score1 < score2){
+                        alert("Tebakan salah player 2 memimpin "+score1+" : "+score2);
                         alert("Hasil yang di cari : "+rand
                                 +"\n"+"============="+"\n"+
                                 "Score   "+"\n"+"Round "+rounde+"\n"+
                                 "-----------------------"+"\n"+
                                 " Player 1  || Player 2 "+"\n"+
                                 "     "+score1+"                "+score2);
-                    }else if(player1 != rand && player2 && score1 > score2){
-                        alert("Tidak ada yang banar Skor "+score1+" : "+score2);
+                    }else if(player1 != rand && player2 != rand && score1 > score2){
+                        alert("Tebakan salah player 1 memimpin "+score1+" : "+score2);
                         alert("Hasil yang di cari : "+rand
                                 +"\n"+"============="+"\n"+
                                 "Score   "+"\n"+"Round "+rounde+"\n"+
