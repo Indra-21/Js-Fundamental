@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body style="margin: 3%;">
+
+    <div id="app">
+
+    </div>
+        <!-- <table id="app" class="table table-dark table-striped"> -->
+        <!-- </table> -->
+  
+   
+
+
+<script>
+    class Tabel {
+        constructor(initialisasi) {
+          this.inisial = initialisasi;
+        }
+      
+        tabelHeader(value) { // membuat function untuk tabel headd
+          let pembuka = "<thead><tr>";
+          let penutup = "</tr></thead>";
+          value.forEach((i) => {  //ngelooping value column untuk di th
+            pembuka += `<th>${i}</th>`; //setiap loopingan akan di bungkus dengan th dan di increment
+          });
+      
+          return pembuka + penutup; //mengembalikan nilai pembuka sama penutup
+        }
+      
+        tabelBody(values) {
+          let pembuka = "<tbody class='table-light'>";
+          let penutup = "</tbody>";
+      
+          values.forEach((i) => { //penjelasan nya sama di atas
+            pembuka += `
+              <tr>
+                <td>${i[0]}</td>
+                <td>${i[1]}</td>
+                <td>${i[2]}</td>
+                <td>${i[3]}</td>
+                <td>${i[4]}</td>
+              </tr>
+            `;
+          });
+      
+          return pembuka + penutup;
+        }
+      
+        render(element) { //membuat kerangka tabel dan menggenerate data 
+          let kerangkaTabel =
+            "<table class='table table-dark table-hover'>" +
+            this.tabelHeader(this.inisial.columns) +
+            this.tabelBody(this.inisial.data) +
+            "</table>";
+          element.innerHTML = kerangkaTabel;
+        }
+    }
+      
+      const tabel = new Tabel({  // buat object dari tabel
+        columns: ["Nama", "JK", "Alamat", "Kelas", "Pengajar"], //isi value th
+        data: [ // isi tabel body
+          ["Indra Saputra", "Laki-Laki", "Jakarta", "MERN Eduwork", "Aldo Rifki Putra"],
+          ["Ghama", "Laki-Laki", "Bandung", "MERN Eduwork", "Aldo Rifki Putra"],
+          ["Rhesa Havilah", "Laki-Laki", "Bekasi", "MERN Eduwork", "Aldo Rifki Putra"],
+          ["Fahmi", "Laki-Laki", "Pekalongan", "MERN Eduwork", "Aldo Rifki Putra"],
+          ["Susi", "Wanita", "Jakarta", "MERN Eduwork", "Pelita"],
+
+        ]
+      });
+      const app = document.getElementById("app"); //untuk nge get element di ID di html
+      tabel.render(app);//mengisi object tabel dengan memanggil function render dan isi dengan value elemet ID 
+
+    </script>
+      
+</body>
+</html>
