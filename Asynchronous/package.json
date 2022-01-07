@@ -1,0 +1,15 @@
+{
+  "name": "asynchronous",
+  "version": "1.0.0",
+  "description": "tugasCallback",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Indra_Saputra",
+  "license": "ISC"
+}
