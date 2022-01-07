@@ -557,7 +557,7 @@ $(document).ready(function body() {
                 return open + close;
             }
         });
-    }, 700);
+    }, 600);
 });
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
